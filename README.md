@@ -4,5 +4,6 @@ Dependencies:
 API - Google Speech Recognition, 
 Libraries - PyPi, 
 GUI - Tkinter.
+<br>
 For Presentation Click On Link:
 https://github.com/prakharindoria/Notepad-with-Speech-Recognition/blob/master/Ppt%20For%20NotePad%20GitHub.pdf
