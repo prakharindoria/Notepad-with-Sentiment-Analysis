@@ -76,14 +76,8 @@ class Model:
             return msg1, base
 
     def takeQuery(self):
-
-        sr = s.Recognizer()
-        sr.pause_threshold = 1
-        with s.Microphone as m:
-            audio = sr.listen(m)
-            query = sr.recognize_google(audio, language='eng-in')
-
-            return query
+     pass
+#needs improvement
 
 # To check scrollbar or any method is being called or not
 # Two CLasses Scrollbar and text,,,,make  your classes and override methods and give your functonality ,this way
