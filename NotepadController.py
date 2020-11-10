@@ -1,21 +1,25 @@
 import NotepadModel
 
-
 class Controller:
+    #Instanciate Model
     def __init__(self):
-        self.notepadModel = NotepadModel.Model()
+        self.model = NotepadModel.Model()
+        print(self.__dict__)
 
-    def save_file(self, msg, url):
-        self.notepadModel.save_file(msg, url)
+    #Call savefile of Model
+    def save_file(self, msz, url):
+        self.model.save_file(msz, url)
 
-    def save_as(self, msg, url):
-        self.notepadModel.save_as(msg, url)
+    # Call saveAs of Model
+    def save_as(self, msz, url):
+        self.model.save_as(msz, url)
 
-    def read_file(self, url):
-        self.msg1, self.base = self.notepadModel.read_file(url)
-        return self.msg1, self.base
+    # Call readFile of Model
+    def read_file(self, path):
+        self.file_content, self.file = self.model.read_file(path)
+        return self.file_content, self.file
 
-    def saysomeThing(self):
-        self.takeAudio=self.notepadModel.takeQuery()
+    # Call takeQuery of Model for Voice Input
+    def saySomething(self):
+        self.takeAudio=self.model.takeQuery()
         return self.takeAudio
-

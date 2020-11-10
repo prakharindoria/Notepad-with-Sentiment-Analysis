@@ -1,84 +1,94 @@
 import os
 import speech_recognition as s
-
-
 class Model:
+    #Initialize
     def __init__(self):
-        self.key = 'abcdefghijklmnopqrstuvwyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
-        self.offset = 5
+        self.key='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'
+        self.offset=5
 
-    def encrypt(self, plaintext):
-        result = ''
-        for ch in plaintext:
+    #Encrytion of text
+    def encrypt(self,plaintext):
+        result=''
+        for x in plaintext:
             try:
-                i = (self.key.index(ch) + self.offset) % 62  # 62
-                result += self.key[i]
+                i= (self.key.index(x)+self.offset)%62 #Total characters used
+                result+=self.key[i]
             except ValueError:
-                result += ch
+                result+=x
+            print(result)
+        return  result
 
+    #Decryption of cipher
+    def decrypt(self,ciphertext):
+        result=''
+        for x in ciphertext:
+            try:
+                i=(self.key.index(x)-self.offset)%62
+                result+=self.key[i]
+            except ValueError:
+                result+=x
         return result
 
-    def decrypt(self, cyphertext):
-        result = ''
-        for ch in cyphertext:
-            try:
-                i = (self.key.index(ch) - self.offset) % 62  # (self.key.length())
-                result += self.key[i]
-            except ValueError:
-                result += ch
-
-        return result
-
-    def save_file(self, msg, url):  # splittext
-        if type(url) is not str:
-            file = url.hostname
+    #Save File
+    def save_file(self,msg,url):
+        file=None
+        result=None
+        if type(url) is str:
+            file=url
         else:
-            file = url
-
-        filename, file_extension = os.path.splitext(file)
-        if file_extension in '.ntxt':
-            content = msg
-            encrypted = self.encrypt(content)
-            with open(file, 'w') as fw:
-                fw.write(encrypted)
+            file=url.name
+        file_name,file_ext=os.path.split(file)
+        print('url is:'+file)
+        print(file_name)
+        print(file_ext)
+        print(file)
+        if('.ntxt' in file_ext):
+            result=self.encrypt(msg)
         else:
-            content = msg
-            with open(file, 'w')as fw:
-                fw.write(content)
+            result=msg
+        with open(file,'w') as fl:
+            fl.write(result)
 
-        # if file_extension in '.ntxt':
-        # msg=self.encrypt(msg)
-        # with open(file,'w')as fw:
-        # fw.write(msg
-
-    def save_as(self, msg, url):
-        if type(url) is not str:
-            file = url.name
+    #Read From File
+    def read_file(self,url):
+        result=None
+        file_name=os.path.basename(url)
+        x,file_ext=os.path.splitext(url)
+        if '.ntxt' in file_ext :
+            fl=open(url,'r')
+            result=self.decrypt(fl.read())
+            fl.close()
         else:
-            file = url
-        msg = self.encrypt(msg)
-        with open(file, 'w')as fw:
-            fw.write(msg)
+            fl = open(url, 'r')
+            result=fl.read()
+            fl.close()
 
-    def read_file(self, url):
-        base = os.path.basename(url.name)
-        filename, file_extension = os.path.splitext(base)
-        if file_extension in '.ntxt':
-            fi = open(url.name, "r")
-            msg1 = fi.read()
-            decrypted = self.decrypt(msg1)
-            fi.close()
-            return decrypted, base
+        return result,file_name
+
+    #Save as Encrypted text
+    def save_as(self,msg,url):
+        file=None
+        if type(url) is str:
+            file=url
         else:
-            fi = open(url.name, "r")
-            msg1 = fi.read()
-            fi.close()
-            return msg1, base
+            file=url.name
+        #print('url is:'+url)
+        print('file is'+file)
+        fl=open(file,'w')
+        fl.write(self.encrypt(msg))
+        fl.close()
 
+    #Take input in voice format
     def takeQuery(self):
-     pass
-#needs improvement
+        print('in take query')
+        sr=s.Recognizer()
+        sr.pause_threshold=1
+        with s.Microphone() as m:
+            audio=sr.listen(m)
+            query=sr.recognize_google(audio,language='en-in')# hi-in for hindi
+            print(query)
+            return query
 
-# To check scrollbar or any method is being called or not
-# Two CLasses Scrollbar and text,,,,make  your classes and override methods and give your functonality ,this way
-# You can check whether it is called or not via coding
+
+
+
