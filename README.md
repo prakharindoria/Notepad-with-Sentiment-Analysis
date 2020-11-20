@@ -10,7 +10,7 @@ https://github.com/prakharindoria/Notepad-with-Speech-Recognition/blob/master/Pp
 
 
 <h4>To use the Notepad:
-  Download and Run the NotePadView.exe
+  Download and Run the NotePadView.exe (Inside build folder)
  </h4>
 
 
