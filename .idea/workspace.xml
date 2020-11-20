@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c5e9bf96-75bf-4973-912c-10a122081313" name="Default Changelist" comment="" />
+    <list default="true" id="c5e9bf96-75bf-4973-912c-10a122081313" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1gqWGVoEwkjwFTj52moVwil0KK1" />
   <component name="ProjectViewState">
@@ -13,8 +18,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$USER_HOME$/PycharmProjects/TkinterPractise" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Drive D Backup/SCA Projects/Python/R Code" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager" selected="Python.NotepadView">
     <configuration name="NotepadController" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -63,9 +68,9 @@
       <module name="R Code" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="C:\Users\prakhar patidar\PycharmProjects\TextToSpeech\venv\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/NotepadView.py" />
@@ -77,12 +82,17 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.NotepadController" />
+      <item itemvalue="Python.NotepadModel" />
+      <item itemvalue="Python.NotepadView" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.NotepadView" />
+        <item itemvalue="Python.NotepadController" />
         <item itemvalue="Python.NotepadModel" />
         <item itemvalue="Python.NotepadView" />
-        <item itemvalue="Python.NotepadController" />
       </list>
     </recent_temporary>
   </component>
@@ -101,26 +111,30 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1604932174282">
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605018388996">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1604932174282" />
-    <state width="1899" height="348" key="GridCell.Tab.0.bottom" timestamp="1604983142796">
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605018388996" />
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1605018903616">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604983142796" />
-    <state width="1899" height="348" key="GridCell.Tab.0.center" timestamp="1604983142796">
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1605018903616" />
+    <state width="1899" height="247" key="GridCell.Tab.0.bottom" timestamp="1605019118155">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="348" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604983142796" />
-    <state width="1899" height="348" key="GridCell.Tab.0.left" timestamp="1604983142795">
+    <state width="1899" height="247" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605019118155" />
+    <state width="1899" height="247" key="GridCell.Tab.0.center" timestamp="1605019118140">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="348" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604983142795" />
-    <state width="1899" height="348" key="GridCell.Tab.0.right" timestamp="1604983142796">
+    <state width="1899" height="247" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605019118140" />
+    <state width="1899" height="247" key="GridCell.Tab.0.left" timestamp="1605019118140">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="348" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604983142796" />
+    <state width="1899" height="247" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605019118140" />
+    <state width="1899" height="247" key="GridCell.Tab.0.right" timestamp="1605019118155">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="247" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605019118155" />
     <state width="1899" height="348" key="GridCell.Tab.1.bottom" timestamp="1604983142796">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -137,9 +151,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604983142796" />
-    <state x="461" y="164" key="SettingsEditor" timestamp="1604239722348">
+    <state x="461" y="164" key="SettingsEditor" timestamp="1605018836025">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1604239722348" />
+    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1605018836025" />
   </component>
 </project>

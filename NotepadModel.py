@@ -1,5 +1,6 @@
-import os
-import speech_recognition as s
+import os #For Read Write Save
+import speech_recognition as s #for Speech Recognition
+
 class Model:
     #Initialize
     def __init__(self):

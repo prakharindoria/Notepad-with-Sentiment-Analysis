@@ -1,13 +1,14 @@
 import tkinter as tk
 import tkinter.font
+import pyttsx3
 from tkinter import ttk, font, colorchooser, messagebox, filedialog
+from textblob import TextBlob
 import NotepadController
 import traceback
 
-
 class Notepad:
 
-    #Intialize
+    #Intialize.
     def __init__(self, root):
         #Root Window
         self.root = root
@@ -29,8 +30,8 @@ class Notepad:
         self.show_toolbar.set(True)
 
         #Method Calls
-        self.set_icons()
         self.set_menu_bar()
+        self.set_icons()
         self.set_file_sub_menu()
         self.set_edit_sub_menu()
         self.set_view_sub_menu()
@@ -42,7 +43,8 @@ class Notepad:
         self.set_tool_bar_event_bindings()
 
 
-    #Set Icons
+
+    #Set Icons.
     def set_icons(self):
         self.new_icon = tk.PhotoImage(file='icons/new.png')
         self.open_icon = tk.PhotoImage(file='icons/open.png')
@@ -63,6 +65,8 @@ class Notepad:
         self.monokai_icon=tk.PhotoImage(file='icons/monokai.png')
         self.night_blue_icon=tk.PhotoImage(file='icons/night_blue.png')
         self.microphone=tk.PhotoImage(file='icons/microphone.png')
+        self.speaker = tk.PhotoImage(file='icons/speaker_icon.png')
+
 
     #Set Horizantal MenuBar
     def set_menu_bar(self):
@@ -225,6 +229,10 @@ class Notepad:
         self.mic_btn = ttk.Button(self.tool_bar, image=self.mic_icon)
         self.mic_btn.grid(row=0, column=9, padx=5)
 
+        self.speak_icon = tk.PhotoImage(file='icons/speaker_icon.png')
+        self.speak_btn = ttk.Button(self.tool_bar, image=self.speak_icon)
+        self.speak_btn.grid(row=0, column=10, padx=5)
+
     #Set ToolBar Event Bindings
     def set_tool_bar_event_bindings(self):
         self.current_font_family='Arial'
@@ -242,6 +250,8 @@ class Notepad:
         self.align_left_btn.configure(command=self.align_left)
         self.align_center_btn.configure(command=self.align_center)
         self.mic_btn.configure(command=self.saySomething)
+        self.speak_btn.configure(command=self.speakOut)
+
 
     # Set Canvas For TextColor
     def set_canvas(self):
@@ -516,10 +526,38 @@ class Notepad:
     def changed(self, event=None):
         words = len(self.text_editor.get(1.0, 'end-1c').split())
         characters = len(self.text_editor.get(1.0, 'end-1c'))
-        self.status_bar.config(text=f'characters: {characters} words:{words}')
+        sentimentMood=self.saySentiment(self.text_editor.get(1.0, 'end-1c'))
+        if sentimentMood=="Positive":
+            self.status_bar.config(text=f'characters: {characters} words:{words} sentiment: {sentimentMood}',foreground="green")
+        elif sentimentMood=="Neutral":
+            self.status_bar.config(text=f'characters: {characters} words:{words} sentiment: {sentimentMood}',
+                                   foreground="yellow")
+        elif sentimentMood=="Negative":
+            self.status_bar.config(text=f'characters: {characters} words:{words} sentiment: {sentimentMood}',
+                                   foreground="red")
         if self.text_editor.edit_modified():
             self.text_changed = True
         self.text_editor.edit_modified(False)
+
+
+    def saySentiment(self,text):
+        self.blob=TextBlob(text).sentiment
+        if self.blob[0]>=0.6:
+            return "Positive"
+        elif self.blob[0]<0.6 and self.blob[0]>=0.4:
+            return "Neutral"
+        else:
+            return "Negative"
+
+    def speakOut(self):
+        try:
+            self.engine = pyttsx3.init()
+            self.text=self.text_editor.get(1.0,'end-1c')
+            self.engine.say("How are You")
+            self.engine.runAndWait()
+        except Exception:
+            messagebox.showerror("Error!", "Can't Speak Right Now! I am Sleeping...")
+
 
 
     #Method For Audio Input
