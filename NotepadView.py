@@ -325,24 +325,6 @@ class Notepad:
 
     #Method to Replace Word Occurance
     def replace(self):
-        # ls=self.text_editor.get(1.0,'end-1c').split()
-        # for x in ls:
-        #     if self.replace_input.get() in ls:
-
-        # if self.text_editor.edit_modified():
-        #     ans = messagebox.askyesno('confirmation', 'do you want to quit')
-        #     if ans==True:
-        #         if self.text_editor.get(1.0, 'end-1c') == '':
-        #             self.root.destroy()
-        #             return
-        #         ans2=messagebox.askyesnocancel('confirmation','do you want to save the changes')
-        #         if ans2:
-        #             self.url=filedialog.asksaveasfile(mode='w',defaultextension='.ntxt',filetypes=[('all files',"*.*"),('text documents','*.txt')])
-        #             self.notepadController.save_file(self.text_editor.get(1.0,'end-1c'),self.url)
-        #         self.root.destroy()
-        #     messagebox.showinfo('message','thankyou')
-        # else:
-        #     self.root.destroy()
         word = self.find_input.get()
         self.replace_text = self.replace_input.get()
         self.content = self.text_editor.get(1.0, tk.END)
@@ -360,14 +342,6 @@ class Notepad:
 
     #Method to Open new File
     def open_file(self):
-        # self.url=filedialog.askopenfilename()
-        # if self.url=='':
-        #     messagebox.showerror('error','enter file to be opened')
-        #     return
-        # else:
-        #     self.text=self.notepadController.read_file(self.url)
-        #     self.text_editor.insert(1.0,self.text)
-        #     self.root.title(self.url)
         try:
             self.url = filedialog.askopenfilename(title='select a file', filetypes=[('text documents', '*.*')])
             self.msg, self.base = self.notepadController.read_file(self.url)
@@ -381,20 +355,6 @@ class Notepad:
 
     # Method to Save File (Normal Text Without Encryption)
     def save_file(self, e=None):
-        # if self.url=='':
-        #     self.prev_text = self.text_editor.get(1.0, tk.END)
-        #     url=filedialog.asksaveasfilename(title='choose location',filetypes=[('ntxt files','*.ntxt')])
-        #     print(type(url))
-        #     if url == '':
-        #         return
-        #     else:
-        #         self.url=url
-        #         self.notepadController.save_file(self.text_editor.get(1.0, tk.END), url)
-        # else:
-        #     print(self.url)
-        #     print(self.text_editor.get(1.0, tk.END))
-        #     self.prev_text=self.text_editor.get(1.0, tk.END)
-        #     self.notepadController.save_file(self.text_editor.get(1.0, tk.END), self.url)
         try:
             content = self.text_editor.get(1.0, 'end-1c')
             if self.url == '':
