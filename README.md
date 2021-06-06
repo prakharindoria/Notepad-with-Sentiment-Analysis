@@ -1,4 +1,4 @@
-# Notepad with Speech Recognition.
+# Notepad with Sentiment Analysis.
 This is a Desktop Application built upon the idea of accessibility, security, and minimalism. This Notepad is very simple to use and has capabilities to take voice commands and perform various underlying tasks.<br>
 Dependencies: <br>
 API - Google Speech Recognition,<br> 
