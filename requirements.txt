@@ -1,0 +1,4 @@
+SpeechRecognition
+textblob
+pyttsx3
+Pillow
